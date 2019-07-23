@@ -93,6 +93,16 @@ namespace ApuestaNow.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnReturn {
+            get {
+                object obj = ResourceManager.GetObject("btnReturn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnSalir {
             get {
                 object obj = ResourceManager.GetObject("btnSalir", resourceCulture);
@@ -103,9 +113,29 @@ namespace ApuestaNow.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSignUp {
+            get {
+                object obj = ResourceManager.GetObject("btnSignUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo {
             get {
                 object obj = ResourceManager.GetObject("Fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_sin_logo {
+            get {
+                object obj = ResourceManager.GetObject("Fondo sin logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
