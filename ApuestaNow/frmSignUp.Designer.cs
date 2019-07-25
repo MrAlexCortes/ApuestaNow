@@ -107,9 +107,8 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(140, 125);
             this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 30);
+            this.textBox1.Size = new System.Drawing.Size(176, 20);
             this.textBox1.TabIndex = 14;
             this.textBox1.Text = "Username";
             // 
@@ -129,9 +128,8 @@
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(140, 178);
             this.textBox2.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 30);
+            this.textBox2.Size = new System.Drawing.Size(176, 20);
             this.textBox2.TabIndex = 16;
             this.textBox2.Text = "Email Address";
             // 
@@ -151,9 +149,8 @@
             this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox3.Location = new System.Drawing.Point(140, 231);
             this.textBox3.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 30);
+            this.textBox3.Size = new System.Drawing.Size(176, 20);
             this.textBox3.TabIndex = 18;
             this.textBox3.Text = "First Name";
             // 
@@ -173,9 +170,8 @@
             this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox4.Location = new System.Drawing.Point(140, 284);
             this.textBox4.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 30);
+            this.textBox4.Size = new System.Drawing.Size(176, 20);
             this.textBox4.TabIndex = 20;
             this.textBox4.Text = "First Surname";
             // 
@@ -195,9 +191,8 @@
             this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox5.Location = new System.Drawing.Point(140, 337);
             this.textBox5.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(176, 30);
+            this.textBox5.Size = new System.Drawing.Size(176, 20);
             this.textBox5.TabIndex = 22;
             this.textBox5.Text = "Second Surname";
             // 
@@ -217,9 +212,8 @@
             this.textBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox6.Location = new System.Drawing.Point(140, 390);
             this.textBox6.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(176, 30);
+            this.textBox6.Size = new System.Drawing.Size(176, 20);
             this.textBox6.TabIndex = 24;
             this.textBox6.Text = "Password";
             // 
@@ -239,9 +233,8 @@
             this.textBox7.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox7.Location = new System.Drawing.Point(140, 443);
             this.textBox7.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(176, 30);
+            this.textBox7.Size = new System.Drawing.Size(176, 20);
             this.textBox7.TabIndex = 26;
             this.textBox7.Text = "Confirm Password";
             // 

@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
@@ -118,6 +127,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btnReturn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMyBets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconGeneralTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconLogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prueba.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
