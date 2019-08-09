@@ -16,5 +16,25 @@ namespace ApuestaNow
         {
             InitializeComponent();
         }
+
+        private void Label68_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TextBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox39_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

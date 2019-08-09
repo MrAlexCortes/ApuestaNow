@@ -203,6 +203,16 @@ namespace ApuestaNow.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconPayment {
+            get {
+                object obj = ResourceManager.GetObject("iconPayment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconProfile {
             get {
                 object obj = ResourceManager.GetObject("iconProfile", resourceCulture);
