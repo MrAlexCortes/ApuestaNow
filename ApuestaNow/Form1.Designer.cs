@@ -30,11 +30,11 @@
         {
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,18 +69,18 @@
             this.btnMin.TabIndex = 2;
             this.btnMin.TabStop = false;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(141, 309);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Username";
+            this.txtUser.BackColor = System.Drawing.Color.White;
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtUser.Location = new System.Drawing.Point(141, 309);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(10);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(176, 20);
+            this.txtUser.TabIndex = 3;
+            this.txtUser.Text = "Username";
             // 
             // pictureBox1
             // 
@@ -112,18 +112,18 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(141, 385);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "Password";
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtPassword.Location = new System.Drawing.Point(141, 385);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(10);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(176, 20);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.Text = "Password";
             // 
             // pictureBox4
             // 
@@ -182,10 +182,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnMin);
             this.Controls.Add(this.btnExit);
@@ -209,11 +209,11 @@
 
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox btnMin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

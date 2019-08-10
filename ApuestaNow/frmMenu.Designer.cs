@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMybets = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnPositions = new System.Windows.Forms.Button();
+            this.btnPayments = new System.Windows.Forms.Button();
+            this.btnBet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -169,26 +169,26 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.profileTxtNewPassword = new System.Windows.Forms.TextBox();
+            this.profileTxtOldPassword = new System.Windows.Forms.TextBox();
+            this.profileTxtConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label81 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.profileTxtFirstSurname = new System.Windows.Forms.TextBox();
+            this.profileTxtFirstName = new System.Windows.Forms.TextBox();
+            this.profileTxtSecondSurname = new System.Windows.Forms.TextBox();
             this.label83 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.profileTxtTelephone = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.profileTxtEmail = new System.Windows.Forms.TextBox();
+            this.profileTxtDateOfBirth = new System.Windows.Forms.TextBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox44 = new System.Windows.Forms.PictureBox();
             this.pictureBox41 = new System.Windows.Forms.PictureBox();
@@ -206,7 +206,7 @@
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -279,77 +279,87 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnMybets
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 115);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 60);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "        My Bets";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMybets.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnMybets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMybets.FlatAppearance.BorderSize = 0;
+            this.btnMybets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMybets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMybets.ForeColor = System.Drawing.Color.White;
+            this.btnMybets.Location = new System.Drawing.Point(0, 130);
+            this.btnMybets.Name = "btnMybets";
+            this.btnMybets.Size = new System.Drawing.Size(250, 60);
+            this.btnMybets.TabIndex = 18;
+            this.btnMybets.Text = "        My Bets";
+            this.btnMybets.UseVisualStyleBackColor = false;
+            this.btnMybets.Click += new System.EventHandler(this.BtnMybets_Click);
             // 
-            // button3
+            // btnProfile
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 233);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 60);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "        Profile";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnProfile.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Location = new System.Drawing.Point(0, 248);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(250, 60);
+            this.btnProfile.TabIndex = 20;
+            this.btnProfile.Text = "        Profile";
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.BtnProfile_Click);
             // 
-            // button4
+            // btnPositions
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 174);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 60);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "        Positions Table";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnPositions.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPositions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPositions.FlatAppearance.BorderSize = 0;
+            this.btnPositions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPositions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPositions.ForeColor = System.Drawing.Color.White;
+            this.btnPositions.Location = new System.Drawing.Point(0, 189);
+            this.btnPositions.Name = "btnPositions";
+            this.btnPositions.Size = new System.Drawing.Size(250, 60);
+            this.btnPositions.TabIndex = 19;
+            this.btnPositions.Text = "        Positions Table";
+            this.btnPositions.UseVisualStyleBackColor = false;
+            this.btnPositions.Click += new System.EventHandler(this.BtnPositions_Click);
             // 
-            // button5
+            // btnPayments
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 292);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(250, 60);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "        Payments";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnPayments.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPayments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayments.FlatAppearance.BorderSize = 0;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayments.ForeColor = System.Drawing.Color.White;
+            this.btnPayments.Location = new System.Drawing.Point(0, 307);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Size = new System.Drawing.Size(250, 60);
+            this.btnPayments.TabIndex = 21;
+            this.btnPayments.Text = "        Payments";
+            this.btnPayments.UseVisualStyleBackColor = false;
+            this.btnPayments.Click += new System.EventHandler(this.BtnPayments_Click);
             // 
-            // button1
+            // btnBet
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 60);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "        Bet";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBet.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBet.FlatAppearance.BorderSize = 0;
+            this.btnBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBet.ForeColor = System.Drawing.Color.White;
+            this.btnBet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBet.Location = new System.Drawing.Point(0, 71);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(250, 60);
+            this.btnBet.TabIndex = 17;
+            this.btnBet.Text = "        Bet";
+            this.btnBet.UseVisualStyleBackColor = false;
+            this.btnBet.Click += new System.EventHandler(this.BtnBet_Click);
             // 
             // label1
             // 
@@ -1614,11 +1624,12 @@
             this.tabProgram.Controls.Add(this.tabGeneralTable);
             this.tabProgram.Controls.Add(this.tabPayments);
             this.tabProgram.Controls.Add(this.tabProfile);
-            this.tabProgram.Location = new System.Drawing.Point(246, 40);
+            this.tabProgram.Location = new System.Drawing.Point(246, 41);
             this.tabProgram.Name = "tabProgram";
             this.tabProgram.SelectedIndex = 0;
             this.tabProgram.Size = new System.Drawing.Size(1054, 705);
             this.tabProgram.TabIndex = 33;
+            this.tabProgram.TabIndexChanged += new System.EventHandler(this.TabProgram_TabIndexChanged);
             // 
             // tabBets
             // 
@@ -1915,9 +1926,9 @@
             this.groupBox3.Controls.Add(this.label86);
             this.groupBox3.Controls.Add(this.label70);
             this.groupBox3.Controls.Add(this.label85);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.profileTxtNewPassword);
+            this.groupBox3.Controls.Add(this.profileTxtOldPassword);
+            this.groupBox3.Controls.Add(this.profileTxtConfirmNewPassword);
             this.groupBox3.Controls.Add(this.pictureBox31);
             this.groupBox3.Controls.Add(this.pictureBox32);
             this.groupBox3.Controls.Add(this.pictureBox33);
@@ -1976,44 +1987,44 @@
             this.label85.TabIndex = 130;
             this.label85.Text = "New Password";
             // 
-            // textBox6
+            // profileTxtNewPassword
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox6.Location = new System.Drawing.Point(61, 155);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(237, 20);
-            this.textBox6.TabIndex = 125;
-            this.textBox6.Text = "Username";
+            this.profileTxtNewPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtNewPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtNewPassword.Location = new System.Drawing.Point(61, 155);
+            this.profileTxtNewPassword.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtNewPassword.Name = "profileTxtNewPassword";
+            this.profileTxtNewPassword.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtNewPassword.TabIndex = 125;
+            this.profileTxtNewPassword.Text = "Username";
             // 
-            // textBox5
+            // profileTxtOldPassword
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox5.Location = new System.Drawing.Point(61, 73);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(176, 20);
-            this.textBox5.TabIndex = 123;
-            this.textBox5.Text = "Username";
+            this.profileTxtOldPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtOldPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtOldPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtOldPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtOldPassword.Location = new System.Drawing.Point(61, 73);
+            this.profileTxtOldPassword.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtOldPassword.Name = "profileTxtOldPassword";
+            this.profileTxtOldPassword.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtOldPassword.TabIndex = 123;
+            this.profileTxtOldPassword.Text = "Username";
             // 
-            // textBox4
+            // profileTxtConfirmNewPassword
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(61, 234);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 20);
-            this.textBox4.TabIndex = 127;
-            this.textBox4.Text = "Username";
+            this.profileTxtConfirmNewPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtConfirmNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtConfirmNewPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtConfirmNewPassword.Location = new System.Drawing.Point(61, 234);
+            this.profileTxtConfirmNewPassword.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtConfirmNewPassword.Name = "profileTxtConfirmNewPassword";
+            this.profileTxtConfirmNewPassword.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtConfirmNewPassword.TabIndex = 127;
+            this.profileTxtConfirmNewPassword.Text = "Username";
             // 
             // pictureBox31
             // 
@@ -2046,17 +2057,17 @@
             // 
             this.groupBox1.Controls.Add(this.label81);
             this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.profileTxtFirstSurname);
+            this.groupBox1.Controls.Add(this.profileTxtFirstName);
+            this.groupBox1.Controls.Add(this.profileTxtSecondSurname);
             this.groupBox1.Controls.Add(this.label83);
             this.groupBox1.Controls.Add(this.label82);
             this.groupBox1.Controls.Add(this.label84);
             this.groupBox1.Controls.Add(this.label88);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.profileTxtTelephone);
             this.groupBox1.Controls.Add(this.label89);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.profileTxtEmail);
+            this.groupBox1.Controls.Add(this.profileTxtDateOfBirth);
             this.groupBox1.Controls.Add(this.pictureBox28);
             this.groupBox1.Controls.Add(this.pictureBox44);
             this.groupBox1.Controls.Add(this.pictureBox41);
@@ -2096,45 +2107,45 @@
             this.button8.Text = "Accept";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // textBox12
+            // profileTxtFirstSurname
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox12.Location = new System.Drawing.Point(64, 155);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(237, 20);
-            this.textBox12.TabIndex = 102;
-            this.textBox12.Text = "Username";
+            this.profileTxtFirstSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtFirstSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtFirstSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtFirstSurname.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtFirstSurname.Location = new System.Drawing.Point(64, 155);
+            this.profileTxtFirstSurname.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtFirstSurname.Name = "profileTxtFirstSurname";
+            this.profileTxtFirstSurname.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtFirstSurname.TabIndex = 102;
+            this.profileTxtFirstSurname.Text = "Username";
             // 
-            // textBox17
+            // profileTxtFirstName
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox17.Location = new System.Drawing.Point(64, 73);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(176, 20);
-            this.textBox17.TabIndex = 96;
-            this.textBox17.Text = "Username";
+            this.profileTxtFirstName.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtFirstName.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtFirstName.Location = new System.Drawing.Point(64, 73);
+            this.profileTxtFirstName.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtFirstName.Name = "profileTxtFirstName";
+            this.profileTxtFirstName.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtFirstName.TabIndex = 96;
+            this.profileTxtFirstName.Text = "Username";
             // 
-            // textBox11
+            // profileTxtSecondSurname
             // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox11.Location = new System.Drawing.Point(64, 234);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(176, 20);
-            this.textBox11.TabIndex = 104;
-            this.textBox11.Text = "Username";
-            this.textBox11.TextChanged += new System.EventHandler(this.TextBox11_TextChanged);
+            this.profileTxtSecondSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtSecondSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtSecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtSecondSurname.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtSecondSurname.Location = new System.Drawing.Point(64, 234);
+            this.profileTxtSecondSurname.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtSecondSurname.Name = "profileTxtSecondSurname";
+            this.profileTxtSecondSurname.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtSecondSurname.TabIndex = 104;
+            this.profileTxtSecondSurname.Text = "Username";
+            this.profileTxtSecondSurname.TextChanged += new System.EventHandler(this.TextBox11_TextChanged);
             // 
             // label83
             // 
@@ -2180,18 +2191,18 @@
             this.label88.TabIndex = 121;
             this.label88.Text = "Telephone";
             // 
-            // textBox3
+            // profileTxtTelephone
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox3.Location = new System.Drawing.Point(64, 392);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(237, 20);
-            this.textBox3.TabIndex = 116;
-            this.textBox3.Text = "Username";
+            this.profileTxtTelephone.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtTelephone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtTelephone.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtTelephone.Location = new System.Drawing.Point(64, 392);
+            this.profileTxtTelephone.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtTelephone.Name = "profileTxtTelephone";
+            this.profileTxtTelephone.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtTelephone.TabIndex = 116;
+            this.profileTxtTelephone.Text = "Username";
             // 
             // label89
             // 
@@ -2204,31 +2215,31 @@
             this.label89.TabIndex = 120;
             this.label89.Text = "Email";
             // 
-            // textBox2
+            // profileTxtEmail
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(64, 310);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 114;
-            this.textBox2.Text = "Username";
+            this.profileTxtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtEmail.Location = new System.Drawing.Point(64, 310);
+            this.profileTxtEmail.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtEmail.Name = "profileTxtEmail";
+            this.profileTxtEmail.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtEmail.TabIndex = 114;
+            this.profileTxtEmail.Text = "Username";
             // 
-            // textBox1
+            // profileTxtDateOfBirth
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(64, 471);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 118;
-            this.textBox1.Text = "Username";
+            this.profileTxtDateOfBirth.BackColor = System.Drawing.SystemColors.Window;
+            this.profileTxtDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.profileTxtDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileTxtDateOfBirth.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.profileTxtDateOfBirth.Location = new System.Drawing.Point(64, 471);
+            this.profileTxtDateOfBirth.Margin = new System.Windows.Forms.Padding(10);
+            this.profileTxtDateOfBirth.Name = "profileTxtDateOfBirth";
+            this.profileTxtDateOfBirth.Size = new System.Drawing.Size(290, 20);
+            this.profileTxtDateOfBirth.TabIndex = 118;
+            this.profileTxtDateOfBirth.Text = "Username";
             // 
             // pictureBox28
             // 
@@ -2289,7 +2300,7 @@
             // 
             this.pictureBox36.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox36.BackgroundImage = global::ApuestaNow.Properties.Resources.iconPayment;
-            this.pictureBox36.Location = new System.Drawing.Point(20, 312);
+            this.pictureBox36.Location = new System.Drawing.Point(20, 327);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(28, 21);
             this.pictureBox36.TabIndex = 34;
@@ -2299,7 +2310,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox8.BackgroundImage = global::ApuestaNow.Properties.Resources.iconLogOut;
-            this.pictureBox8.Location = new System.Drawing.Point(27, 370);
+            this.pictureBox8.Location = new System.Drawing.Point(27, 385);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(21, 26);
             this.pictureBox8.TabIndex = 27;
@@ -2309,7 +2320,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox6.BackgroundImage = global::ApuestaNow.Properties.Resources.iconProfile;
-            this.pictureBox6.Location = new System.Drawing.Point(21, 250);
+            this.pictureBox6.Location = new System.Drawing.Point(21, 265);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(27, 27);
             this.pictureBox6.TabIndex = 26;
@@ -2319,7 +2330,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox7.BackgroundImage = global::ApuestaNow.Properties.Resources.iconGeneralTable;
-            this.pictureBox7.Location = new System.Drawing.Point(20, 192);
+            this.pictureBox7.Location = new System.Drawing.Point(20, 207);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(27, 26);
             this.pictureBox7.TabIndex = 25;
@@ -2329,7 +2340,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox5.BackgroundImage = global::ApuestaNow.Properties.Resources.iconMyBets;
-            this.pictureBox5.Location = new System.Drawing.Point(22, 132);
+            this.pictureBox5.Location = new System.Drawing.Point(22, 147);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 25);
             this.pictureBox5.TabIndex = 24;
@@ -2339,7 +2350,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBox4.BackgroundImage = global::ApuestaNow.Properties.Resources.iconBet;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 74);
+            this.pictureBox4.Location = new System.Drawing.Point(21, 89);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
             this.pictureBox4.TabIndex = 23;
@@ -2396,19 +2407,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button7
+            // btnLogOut
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 352);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(250, 60);
-            this.button7.TabIndex = 35;
-            this.button7.Text = "        Log Out";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 367);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(250, 60);
+            this.btnLogOut.TabIndex = 35;
+            this.btnLogOut.Text = "        Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // groupBox7
             // 
@@ -2484,15 +2497,15 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPayments);
+            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.btnPositions);
+            this.Controls.Add(this.btnMybets);
+            this.Controls.Add(this.btnBet);
             this.Controls.Add(this.btnMin);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabProgram);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2579,11 +2592,11 @@
         private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBet;
+        private System.Windows.Forms.Button btnMybets;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnPositions;
+        private System.Windows.Forms.Button btnPayments;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -2701,15 +2714,15 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.TabPage tabBet;
         private System.Windows.Forms.PictureBox pictureBox36;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.TabPage tabPayments;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox profileTxtSecondSurname;
         private System.Windows.Forms.PictureBox pictureBox39;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox profileTxtFirstName;
+        private System.Windows.Forms.TextBox profileTxtFirstSurname;
         private System.Windows.Forms.PictureBox pictureBox44;
         private System.Windows.Forms.PictureBox pictureBox41;
         private System.Windows.Forms.Label label82;
@@ -2718,10 +2731,10 @@
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox profileTxtDateOfBirth;
         private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox profileTxtEmail;
+        private System.Windows.Forms.TextBox profileTxtTelephone;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.PictureBox pictureBox30;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -2731,9 +2744,9 @@
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox profileTxtNewPassword;
+        private System.Windows.Forms.TextBox profileTxtOldPassword;
+        private System.Windows.Forms.TextBox profileTxtConfirmNewPassword;
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;

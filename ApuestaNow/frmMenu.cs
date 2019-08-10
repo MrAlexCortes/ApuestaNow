@@ -36,5 +36,72 @@ namespace ApuestaNow
         {
 
         }
+
+        private void BtnBet_Click(object sender, EventArgs e)
+        {
+            tabProgram.SelectedTab = tabBet;
+            btnBet.BackColor = SystemColors.HotTrack;
+            btnProfile.BackColor = SystemColors.Highlight;
+            btnPayments.BackColor = SystemColors.Highlight;
+            btnLogOut.BackColor = SystemColors.Highlight;
+            btnPositions.BackColor = SystemColors.Highlight;
+            btnMybets.BackColor = SystemColors.Highlight;
+        }
+
+        private void BtnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPositions_Click(object sender, EventArgs e)
+        {
+            tabProgram.SelectedTab = tabGeneralTable;
+            btnPositions.BackColor = SystemColors.HotTrack;
+            btnBet.BackColor = SystemColors.Highlight;
+            btnProfile.BackColor = SystemColors.Highlight;
+            btnPayments.BackColor = SystemColors.Highlight;
+            btnLogOut.BackColor = SystemColors.Highlight;
+            btnMybets.BackColor = SystemColors.Highlight;
+
+            tabProfile.Controls.Clear();
+        }
+
+        private void BtnProfile_Click(object sender, EventArgs e)
+        {
+            tabProgram.SelectedTab = tabProfile;
+            btnBet.BackColor = SystemColors.Highlight;
+            btnProfile.BackColor = SystemColors.HotTrack;
+            btnPayments.BackColor = SystemColors.Highlight;
+            btnLogOut.BackColor = SystemColors.Highlight;
+            btnPositions.BackColor = SystemColors.Highlight;
+            btnMybets.BackColor = SystemColors.Highlight;
+        }
+
+        private void BtnPayments_Click(object sender, EventArgs e)
+        {
+            tabProgram.SelectedTab = tabBet;
+            btnBet.BackColor = SystemColors.Highlight;
+            btnProfile.BackColor = SystemColors.Highlight;
+            btnPayments.BackColor = SystemColors.HotTrack;
+            btnLogOut.BackColor = SystemColors.Highlight;
+            btnPositions.BackColor = SystemColors.Highlight;
+            btnMybets.BackColor = SystemColors.Highlight;
+        }
+
+        private void BtnMybets_Click(object sender, EventArgs e)
+        {
+            tabProgram.SelectedTab = tabMyBets;
+            btnBet.BackColor = SystemColors.Highlight;
+            btnProfile.BackColor = SystemColors.Highlight;
+            btnPayments.BackColor = SystemColors.Highlight;
+            btnLogOut.BackColor = SystemColors.Highlight;
+            btnPositions.BackColor = SystemColors.Highlight;
+            btnMybets.BackColor = SystemColors.HotTrack;
+        }
+
+        private void TabProgram_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
