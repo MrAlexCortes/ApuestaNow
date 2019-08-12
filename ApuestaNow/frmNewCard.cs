@@ -13,6 +13,8 @@ namespace ApuestaNow
 {
     public partial class frmNewCard : Form
     {
+
+        public static int userid = frmMenu.userid;
         public frmNewCard()
         {
             InitializeComponent();
@@ -58,8 +60,8 @@ namespace ApuestaNow
 
         private void BtnAccept_Click(object sender, EventArgs e)
         {
-            if (!Card.AddCard(txtCardNumber.Text, txtCardHolder.Text, txtBoxExpDate.Text, txtCCV.Text))
-                Card.AddCard(txtCardNumber.Text, txtCardHolder.Text, txtBoxExpDate.Text, txtCCV.Text);
+            if (!Card.AddCard(txtCardNumber.Text, txtCardHolder.Text, txtBoxExpDate.Text, txtCCV.Text, userid))
+                Card.AddCard(txtCardNumber.Text, txtCardHolder.Text, txtBoxExpDate.Text, txtCCV.Text, userid);
 
             this.Close();
         }

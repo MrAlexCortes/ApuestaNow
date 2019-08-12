@@ -70,7 +70,7 @@ public class Card
     #endregion
 
     #region static methods
-    public static List<Card> GetAll()
+    public static List<Card> GetAll(int user)
     {
         List<Card> list = new List<Card>();
 
@@ -82,7 +82,7 @@ public class Card
                             where ucUser = @IDUSER";
 
         SqlCommand command = new SqlCommand(query); //command
-        command.Parameters.AddWithValue("@IDUSER", 5); //assign value of id to the parameter
+        command.Parameters.AddWithValue("@IDUSER", user); //assign value of id to the parameter
         DataTable table = SqlServerConnection.ExecuteQuery(command); //execute query
 
         // read table rows
@@ -102,7 +102,7 @@ public class Card
         return list; //return list
     }
 
-    public static bool AddCard(string number, string name, string expdate, string ccv)
+    public static bool AddCard(string number, string name, string expdate, string ccv, int user)
     {
         string query = "select MAX(carUniNumber) as LastCard from Card";
         SqlCommand command = new SqlCommand(query); //command
@@ -126,7 +126,7 @@ public class Card
             command2.Parameters.AddWithValue("@carExpDate", expdate);
             command2.Parameters.AddWithValue("@carHolder", name);
             command2.Parameters.AddWithValue("@carCCV", ccv);
-            command2.Parameters.AddWithValue("@ucUser", 5);
+            command2.Parameters.AddWithValue("@ucUser", user);
             command2.Parameters.AddWithValue("@ucCard", lastid);
             if (SqlServerConnection.ExecuteNonQuery(command2) > 0)
                 return true; //command executed successfully
@@ -137,7 +137,7 @@ public class Card
             return false;
     }
 
-    public static bool DeleteCard(int id)
+    public static bool DeleteCard(int id, int user)
     {
 
             string query = @"BEGIN TRANSACTION
@@ -146,7 +146,7 @@ public class Card
                                 COMMIT";
             SqlCommand command = new SqlCommand(query); //command
             command.Parameters.AddWithValue("@carUniNumber", id);
-            command.Parameters.AddWithValue("@user", 5);
+            command.Parameters.AddWithValue("@user", user);
             if (SqlServerConnection.ExecuteNonQuery(command) > 0)
                 return true; //command executed successfully
             else

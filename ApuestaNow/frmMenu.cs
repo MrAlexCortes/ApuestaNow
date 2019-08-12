@@ -12,11 +12,16 @@ namespace ApuestaNow
 {
     public partial class frmMenu : Form
     {
-        User user = new User(5);
+        public static int userid = frmLogin.userid;
+        public int week = 0;
+        User user = new User(userid);
+
         public frmMenu()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
+
+        
 
         private void Label68_Click(object sender, EventArgs e)
         {
@@ -47,6 +52,8 @@ namespace ApuestaNow
             btnLogOut.BackColor = SystemColors.Highlight;
             btnPositions.BackColor = SystemColors.Highlight;
             btnMybets.BackColor = SystemColors.Highlight;
+
+            dgvBet.DataSource = Match.GetMatchesOfTheWeek();
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -130,7 +137,7 @@ namespace ApuestaNow
             paymentsBtnWithdraw.BackColor = Color.Silver;
 
 
-            List<Card> cards = Card.GetAll();
+            List<Card> cards = Card.GetAll(user.Number);
 
             dgvCards.AutoGenerateColumns = false;
             dgvCards.DataSource = cards;
@@ -143,6 +150,7 @@ namespace ApuestaNow
                 paymentsCboxCard2.Items.Add(card.CardNumber);
             }
 
+            paymentsLblCredits.Text = user.Credits.ToString() + " Credits";
 
         }
 
@@ -167,7 +175,7 @@ namespace ApuestaNow
         {
             frmNewCard FormNewCard = new frmNewCard();
             FormNewCard.ShowDialog();
-            List<Card> cards = Card.GetAll();
+            List<Card> cards = Card.GetAll(user.Number);
 
             dgvCards.AutoGenerateColumns = false;
             dgvCards.DataSource = cards;
@@ -187,8 +195,8 @@ namespace ApuestaNow
         private void PaymentsBtnDelete_Click(object sender, EventArgs e)
         {
             int id = (int)dgvCards.SelectedCells[0].Value;
-            Card.DeleteCard(id);
-            List<Card> cards = Card.GetAll();
+            Card.DeleteCard(id, user.Number);
+            List<Card> cards = Card.GetAll(user.Number);
 
             dgvCards.AutoGenerateColumns = false;
             dgvCards.DataSource = cards;
@@ -227,10 +235,10 @@ namespace ApuestaNow
 
         private void PaymentsNumWithdraw_ValueChanged(object sender, EventArgs e)
         {
-            if (paymentsNumWithdraw.Value < user.Credits)
+            if (paymentsNumWithdraw.Value < user.Credits && paymentsCboxCard1.SelectedIndex >= 0)
             {
-                paymentsBtnDeposit.Enabled = true;
-                paymentsBtnDeposit.BackColor = Color.FromArgb(255, 0, 192, 0);
+                paymentsBtnWithdraw.Enabled = true;
+                paymentsBtnWithdraw.BackColor = Color.FromArgb(255, 0, 192, 0);
             }
 
         }
@@ -256,7 +264,10 @@ namespace ApuestaNow
         private void PaymentsBtnDeposit_Click(object sender, EventArgs e)
         {
             if (user.ModifyCredits(true, Convert.ToInt32(paymentsNumDeposit.Value)))
+            {
                 MessageBox.Show(paymentsNumDeposit.Value.ToString() + " Credits has been deposited to your account", "Credits Deposited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                paymentsLblCredits.Text = user.Credits.ToString() + " Credits";
+            }
         }
 
         private void DgvTable_SelectionChanged(object sender, EventArgs e)
@@ -307,7 +318,39 @@ namespace ApuestaNow
 
         private void ProfileBtnInfo_Click(object sender, EventArgs e)
         {
-            user.BirthDate = (DateTime)profileDateBirth.Text;
+            //user.BirthDate = (DateTime)profileDateBirth.Text;
+            user.UpdateInfo(profileTxtFirstName.Text, profileTxtFirstSurname.Text, profileTxtSecondSurname.Text, profileTxtEmail.Text, profileTxtTelephone.Text, profileDateBirth.Value);
+        }
+
+        private void TabBets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Text = "Welcome " + user.UserName;
+
+            int counter = 0;
+            DateTime start = new DateTime(2019, 07, 15);
+            while(week == 0)
+            {
+                counter++;
+                if (DateTime.Today < start.AddDays(7 * counter))
+                {
+                    week = counter;
+                    MessageBox.Show(week.ToString());
+                }
+            }
+        }
+
+        private void PaymentsBtnWithdraw_Click(object sender, EventArgs e)
+        {
+            if (user.ModifyCredits(false, Convert.ToInt32(paymentsNumWithdraw.Value)))
+            {
+                MessageBox.Show(paymentsNumDeposit.Value.ToString() + "MXN has been deposited to your Card", "Money Deposited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                paymentsLblCredits.Text = user.Credits.ToString() + " Credits";
+            }
         }
     }
 }

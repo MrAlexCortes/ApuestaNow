@@ -94,6 +94,25 @@ public class User
         _useBirthDate = new DateTime();
     }
 
+    public User(string user, string password)
+    {
+        string sha1 = Encrypt(password);
+
+        string query = "select useNumber, useUser, usePassword from ANUser where useUser=@USER and usePassword=@PASSWORD";
+        SqlCommand command = new SqlCommand(query);
+        command.Parameters.AddWithValue("@USER", user);
+        command.Parameters.AddWithValue("@PASSWORD", sha1);
+        DataTable table = SqlServerConnection.ExecuteQuery(command);
+
+        if (table.Rows.Count == 1)
+        {
+            DataRow row = table.Rows[0];
+            _useNumber = (int)row["useNumber"];
+            _useUser = (string)row["useUser"];
+            _usePassword = (string)row["usePassword"];
+        }
+    }
+
     public User(int number)
     {
         //query
@@ -164,7 +183,7 @@ public class User
 
         SqlCommand command2 = new SqlCommand(query); //command
         command2.Parameters.AddWithValue("@amount", amount);
-        command2.Parameters.AddWithValue("@userId", 5/*_useNumber */);
+        command2.Parameters.AddWithValue("@userId", _useNumber);
 
         if (SqlServerConnection.ExecuteNonQuery(command2) > 0)
         {
@@ -179,31 +198,45 @@ public class User
             return false; //could not execute command
     }
 
-    public bool UpdateInfo(string firstName, string firstSurname, string secondSurname, string email, int tel, DateTime dob)
+    public bool UpdateInfo(string firstName, string firstSurname, string secondSurname, string email, string tel, DateTime dob)
     {
-        string query = "update ANUser set useCredits = (useCredits + @amount) where useNumber = @userId"; ;
+        string query = @"update ANUser set useFirName = @FIRSTNAME, useFirSurname = @FIRSTSURNAME, useSecSurname = @SECONDSURNAME, useEmail = @EMAIL, 
+                        useTel = @TEL, useBirthDate = convert(datetime, @DOB, 101) where useNumber = @USERID";
 
 
         SqlCommand command = new SqlCommand(query); //command
-        command.Parameters.AddWithValue("@amount", amount);
-        command.Parameters.AddWithValue("@userId", 5/*_useNumber */);
+        command.Parameters.AddWithValue("@FIRSTNAME", firstName);
+        command.Parameters.AddWithValue("@USERID", _useNumber);
+        command.Parameters.AddWithValue("@FIRSTSURNAME", firstSurname);
+        command.Parameters.AddWithValue("@SECONDSURNAME", secondSurname);
+        command.Parameters.AddWithValue("@EMAIL", email);
+        command.Parameters.AddWithValue("@TEL", tel);
+        command.Parameters.AddWithValue("@DOB", dob);
 
-        if (SqlServerConnection.ExecuteNonQuery(command2) > 0)
-        {
-            if (sum)
-                _useCredits = _useCredits + amount;
-            else
-                _useCredits = _useCredits - amount;
-
+        if (SqlServerConnection.ExecuteNonQuery(command) > 0)
             return true;
-        }
         else
-            return false; //could not execute command
+            return false;
     }
     #endregion
 
     #region Class Methods
 
     #endregion
+
+    public string Encrypt(string password)
+    {
+        var sha1 = new System.Security.Cryptography.SHA1Managed();
+        var plaintextBytes = Encoding.UTF8.GetBytes(password);
+        var hashBytes = sha1.ComputeHash(plaintextBytes);
+
+        var sb = new StringBuilder();
+        foreach (var hashByte in hashBytes)
+        {
+            sb.AppendFormat("{0:x2}", hashByte);
+        }
+
+        return sb.ToString().ToUpper();
+    }
 }
 
