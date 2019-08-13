@@ -12,6 +12,8 @@ public class Match
     private int _id;
     private DateTime _date;
     private int _week;
+    private string _teamName;
+    private int _teamBets;
     #endregion
 
     #region properties
@@ -31,41 +33,88 @@ public class Match
         get { return _week; }
         set { _week = value; }
     }
+
+    public string TeamName
+    {
+        get { return _teamName; }
+        set { _teamName = value; }
+    }
+
+    public int TeamBets
+    {
+        get { return _teamBets; }
+        set { _teamBets = value; }
+    }
     #endregion
 
     #region constructors
 
+    public Match()
+    {
+        _id = 0;
+        _teamName = "";
+        _teamBets = 0;
+        _date = new DateTime();
+        _week = 0;
+    }
+
+    public Match(int id)
+    {
+        //query
+        string query = "select matNumber, matDate, matWeek, matTotalBets from Match where matNumber = @ID"; 
+        SqlCommand command = new SqlCommand(query); //command
+        command.Parameters.AddWithValue("@ID", id);//assign value of user number to the parameter
+        DataTable table = SqlServerConnection.ExecuteQuery(command); //execute query
+        //read now 
+        if (table.Rows.Count > 0)
+        {
+            //read first andd only row found
+            DataRow row = table.Rows[0];
+            //read each field andd assign the values to the attributes
+            _id = (int)row["matNumber"];
+            _date = (DateTime)row["matDate"];
+            _week = (int)row["matWeek"];
+            _teamBets = (int)row["matTotalBets"];
+        }
+        else
+            throw new RecordNotFoundException(id);
+    }
+
+    public Match(int matchId, string teamName, int teamBets, DateTime matchDate, int week)
+    {
+        _id = matchId;
+        _date = matchDate;
+        _teamName = teamName;
+        _teamBets = teamBets;
+    }
     #endregion
 
     #region class methods
-    public static List<Match> GetMatchesOfTheWeek()
+    public static List<Match> GetMatchesOfTheWeek(int week)
     {
         List<Match> list = new List<Match>();
 
         // query
-        string query = @"select teamCode, teamName, teamJJ, teamJG, teamJE, teamJP, teamGF,
-                        teamGC, teamPoints from Teams
-						order by teamPoints desc, teamJG desc, teamJE desc, teamGF desc;";
+        string query = @"select matNumber, teamName, mtTeamBets, matDate
+                        from Teams
+                          Join Match_Team on mtTeam = teamCode
+                          Join Match on mtMatch = matNumber
+                          where matWeek = @WEEK";
 
         SqlCommand command = new SqlCommand(query); //command
+        command.Parameters.AddWithValue("@WEEK", week);
         DataTable table = SqlServerConnection.ExecuteQuery(command); //execute query
 
         // read table rows
         foreach (DataRow row in table.Rows)
         {
             //read each field
-            string id = (string)row["teamCode"];
+            int matchId = (int)row["matNumber"];
             string teamName = (string)row["teamName"];
-            int teamJJ = (int)row["teamJJ"];
-            int teamJG = (int)row["teamJG"];
-            int teamJE = (int)row["teamJE"];
-            int teamJP = (int)row["teamJP"];
-            int teamGF = (int)row["teamGF"];
-            int teamGC = (int)row["teamGC"];
-            int teamPoints = (int)row["teamPoints"];
+            int teamBets = (int)row["mtTeamBets"];
+            DateTime matchDate = (DateTime)row["matDate"];
 
-            //add player to list
-            list.Add(new Team(id, teamName, teamJJ, teamJG, teamJE, teamJP, teamGF, teamGC, teamPoints));
+            list.Add(new Match(matchId, teamName, teamBets, matchDate, week));
         }
 
         return list; //return list

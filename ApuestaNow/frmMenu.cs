@@ -43,6 +43,7 @@ namespace ApuestaNow
 
         }
 
+        bool firstTime2 = true;
         private void BtnBet_Click(object sender, EventArgs e)
         {
             tabProgram.SelectedTab = tabBet;
@@ -53,7 +54,43 @@ namespace ApuestaNow
             btnPositions.BackColor = SystemColors.Highlight;
             btnMybets.BackColor = SystemColors.Highlight;
 
-            dgvBet.DataSource = Match.GetMatchesOfTheWeek();
+            dgvNewBet.AutoGenerateColumns = false;
+            dgvNewBet.DataSource = Match.GetMatchesOfTheWeek(week);
+            bool par = true;
+            for (int i = 0; i < dgvNewBet.Rows.Count - 1; i+=2)
+            {
+                if(par)
+                {
+                    dgvNewBet.Rows[i].DefaultCellStyle.BackColor = SystemColors.ControlLight;
+                    dgvNewBet.Rows[i + 1].DefaultCellStyle.BackColor = SystemColors.ControlLight;
+                    par = false;
+                }
+                else
+                {
+                    dgvNewBet.Rows[i].DefaultCellStyle.BackColor = SystemColors.Highlight;
+                    dgvNewBet.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    dgvNewBet.Rows[i + 1].DefaultCellStyle.BackColor = SystemColors.Highlight;
+                    dgvNewBet.Rows[i + 1].DefaultCellStyle.ForeColor = Color.White;
+
+                    par = true;
+                }
+            }
+
+            for (int i = 0; i < dgvNewBet.Rows.Count; i++)
+            {
+                if (Convert.ToDateTime(dgvNewBet["Date", i].Value) < DateTime.Today)
+                {
+                    dgvNewBet[7, i].Value = "Closed";
+                    dgvNewBet[7, i].Style.ForeColor = Color.Red;
+                }
+                else
+                {
+                    dgvNewBet[7, i].Value = "Open";
+                    dgvNewBet[7, i].Style.ForeColor = Color.LimeGreen;
+                }
+            }
+                colBet.UseColumnTextForButtonValue = true;
+                
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -350,6 +387,60 @@ namespace ApuestaNow
             {
                 MessageBox.Show(paymentsNumDeposit.Value.ToString() + "MXN has been deposited to your Card", "Money Deposited", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 paymentsLblCredits.Text = user.Credits.ToString() + " Credits";
+            }
+        }
+
+        private void DgvNewBet_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvNewBet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                if (senderGrid[e.ColumnIndex + 1, e.RowIndex].Value.ToString() == "Open")
+                {
+                    int credits = Convert.ToInt32(senderGrid[e.ColumnIndex - 1, e.RowIndex].Value);
+                    if (credits > 0 && credits <= user.Credits)
+                    {
+                        Bet bet = new Bet();
+                        bet.User = new User(user.Number);
+                        bet.Amount = Convert.ToInt32(senderGrid[e.ColumnIndex - 1, e.RowIndex].Value);
+                        bet.Match = new Match(Convert.ToInt32(senderGrid["colMatch", e.RowIndex].Value));
+                        bet.Team = new Team(Convert.ToString(senderGrid["colTeam", e.RowIndex].Value));
+
+                        bet.NewBet();
+                        user.ModifyCredits(false, credits);
+                        MessageBox.Show(credits + " Credits on " + bet.Team.Name, "Bet Placed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvNewBet.AutoGenerateColumns = false;
+                        dgvNewBet.DataSource = Match.GetMatchesOfTheWeek(week);
+                        BtnBet_Click(dgvNewBet, EventArgs.Empty);
+                    }
+                    else
+                        MessageBox.Show("You need to enter a valid number", "Invalid amount of Credits", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                    MessageBox.Show("This Match is Finished", "You are not allowed to bet", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void DgvNewBet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DgvNewBet_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgvNewBet.CurrentCell.ColumnIndex == 5)
+            {
+                e.Control.KeyPress += new KeyPressEventHandler(DgvNewBet_KeyPress);
             }
         }
     }
